@@ -17,3 +17,5 @@ class Contact:
         self.address_2=address_2
         self.home_2=home_2
 
+
+

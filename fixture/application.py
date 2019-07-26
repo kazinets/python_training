@@ -28,6 +28,10 @@ class Application:
         wd=self.wd
         wd.find_element_by_link_text("group page").click()
 
+    def return_to_home(self):
+        wd=self.wd
+        wd.find_element_by_link_text("home page").click()
+
 
     def destroy(self):
         self.wd.quit()
