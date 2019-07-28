@@ -44,8 +44,7 @@ class ContactHelper ():
 
     def edit_first_contact(self, contact):
         wd = self.app.wd
-        #self.tap_on_menu_AddNew_item()
-        #wd.find_element_by_link_text()
+
 
         wd.find_element_by_xpath(
             "(.//*[normalize-space(text()) and normalize-space(.)='Homw1'])[1]/following::img[2]").click()
@@ -87,4 +86,14 @@ class ContactHelper ():
         wd.find_element_by_name("phone2").clear()
         wd.find_element_by_name("phone2").send_keys(contact.home_2)
         wd.find_element_by_name("update").click()
+
+    def delete_first_contact(self):
+        wd = self.app.wd
+
+        wd.find_element_by_xpath(
+            "(.//*[normalize-space(text()) and normalize-space(.)='Homw1'])[1]/following::img[2]").click()
+        wd.find_element_by_xpath(".//html/body/div[1]/div[4]/form[2]/input[2]").click()
+
+
+
 
