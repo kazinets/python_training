@@ -2,13 +2,13 @@ from model.group import Group
 
 def test_create_empty_group(app):
 
-    app.login("admin","secret")
+    app.session.login("admin","secret")
 
     # Open Group
     app.group.open_group_page()
     app.group.create(Group(name="", header="", footer=""))
     app.group.open_group_page()
-    app.logout()
+    app.session.logout()
 
     
 def test_create_group(app):
