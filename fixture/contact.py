@@ -19,21 +19,19 @@ class ContactHelper ():
 
     def edit_first_contact(self, contact):
         wd = self.app.wd
-
-
-        wd.find_element_by_xpath("//*//a[contains(@href, 'edit.php')]").click()
-
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("//img[@alt='Edit']").click()
         self.fill_contact_form(contact)
-
-        #wd.find_element_by_name("update").click()
-        wd.find_element_by_name("Enter").click()
+        wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
 
     def delete_first_contact(self):
         wd = self.app.wd
 
-        wd.find_element_by_xpath(
-            "(.//*[normalize-space(text()) and normalize-space(.)='Homw1'])[1]/following::img[2]").click()
-        wd.find_element_by_xpath(".//html/body/div[1]/div[4]/form[2]/input[2]").click()
+        wd.find_element_by_name("selected[]").click()
+        # delete first contact
+
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
 
     def fill_contact_form (self, contact):
         wd = self.app.wd
