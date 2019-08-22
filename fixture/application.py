@@ -6,14 +6,17 @@ from fixture.session import SessionHelper
 
 
 
+
 class Application:
 
     def __init__(self):
         self.wd = WebDriver()
         self.wd.implicitly_wait(30)
-        self.session=SessionHelper(self)
+        self.session = SessionHelper(self)
         self.group=GroupHelper(self)
         self.contact=ContactHelper(self)
+
+
 
 
     def is_valid (self):
