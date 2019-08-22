@@ -16,6 +16,14 @@ class Application:
         self.contact=ContactHelper(self)
 
 
+    def is_valid (self):
+        try:
+            self.wd.current_url
+            return True
+        except:
+            return False
+
+
     def tap_on_home_menu_item(self):
         wd = self.wd
         wd.find_element_by_link_text("home").click()
