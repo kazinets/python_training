@@ -15,7 +15,6 @@ def test_edit_first_group(app):
 def test_modify_group_header(app):
 
     app.open_home_page()
-    # Open Group
     app.group.open_group_page()
     if app.group.count()==0:
         app.group.create(Group(name="First",header="First"))
