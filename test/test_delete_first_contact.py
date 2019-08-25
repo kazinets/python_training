@@ -8,4 +8,4 @@ def test_delete_first_contact(app):
                              "email2@tut.by", "19", "December", "1985", "address2", "home2"))
     app.open_home_page()
     app.contact.delete_first_contact()
-    app.return_to_home()
+    app.tap_on_home_menu_item()

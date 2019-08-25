@@ -28,20 +28,19 @@ class Application:
 
     def tap_on_home_menu_item(self):
         wd = self.wd
-        wd.find_element_by_link_text("home").click()
+        if not (wd.current_url.endswith("/index.php") and len(wd.find_elements_by_id("MassCB")) > 0):
+            wd.find_element_by_link_text("home").click()
+
 
     def open_home_page(self):
         wd = self.wd
         wd.get("http://localhost/addressbookv4/index.php")
 
 
+
     def return_to_home_page(self):
         wd=self.wd
         wd.find_element_by_link_text("group page").click()
-
-    def return_to_home(self):
-        wd=self.wd
-        wd.find_element_by_link_text("home").click()
 
 
     def destroy(self):

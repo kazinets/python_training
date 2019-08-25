@@ -5,6 +5,9 @@ class ContactHelper ():
     def __init__(self, app):
         self.app=app
 
+
+
+
     def add_new_contact(self, contact):
         wd = self.app.wd
         self.tap_on_menu_AddNew_item()

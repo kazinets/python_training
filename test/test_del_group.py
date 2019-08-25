@@ -9,4 +9,3 @@ def test_delete_first_group(app):
        app.group.create(Group(name="First Group", header="logo", footer="comment 1"))
     app.group.delete_first_group()
     app.group.open_group_page()
-   # app.session.logout()
