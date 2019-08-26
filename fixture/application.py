@@ -35,7 +35,8 @@ class Application:
 
     def open_home_page(self):
         wd = self.wd
-        wd.get("http://localhost/addressbookv4/index.php")
+        if not (wd.current_url.endswith("/index.php") and len(wd.find_elements_by_id("MassCB")) > 0):
+            wd.get("http://localhost/addressbookv4/index.php")
 
 
 
